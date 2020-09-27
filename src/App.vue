@@ -1,19 +1,18 @@
 <template>
   <div id="app">
-    <WordGraph/>
+    <WordGraph />
   </div>
 </template>
 
 <script>
-
-import WordGraph from './components/WordGraph.vue'
+import WordGraph from "./components/WordGraph.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     WordGraph
   }
-}
+};
 </script>
 
 <style>
