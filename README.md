@@ -2,6 +2,8 @@
 
 A Korean word puzzle game.
 
+Also, rabokki is a mixture of two cheap staples of Korean street fare.
+
 ## Project setup
 ```
 npm install
@@ -21,4 +23,3 @@ npm run build
 ```
 npm run lint
 ```
-Rabokki is a mixture of two cheap staples of Korean street fare.
