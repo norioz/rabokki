@@ -1,9 +1,6 @@
 <template>
   <div>
-    <h1>Nothing to see here. Move along.</h1>
-    <div>
-      <svg />
-    </div>
+    <svg />
   </div>
 </template>
 
