@@ -19,12 +19,12 @@ export default {
       this.renderChart(this.chartData);
   },
   methods: {
-    renderChart(data) {
-      const margin = 60;
+    renderChart() {
+      // const margin = 60;
       const svgWidth = 1000;
       const svgHeight = 600;
-      const chartWidth = 1000 - 2 * margin;
-      const chartHeight = 600 - 2 * margin;
+      // const chartWidth = 1000 - 2 * margin;
+      // const chartHeight = 600 - 2 * margin;
 
       const svg = d3
         .select("svg")
@@ -32,26 +32,34 @@ export default {
         .attr("height", svgHeight);
 
       this.chart = svg
-        .append("g")
-        .attr("transform", `translate(${margin}, ${margin})`);
+        .append("circle")
+        .attr("cx", 30)
+        .attr("cy", 30)
+        .attr("r", 20)
+      
+      // this.chart = svg
+      //   .append("g")
+      //   .attr("transform", `translate(${margin}, ${margin})`);
 
-      const yScale = d3
-        .scaleLinear()
-        .range([chartHeight, 0])
-        .domain([0, chartWidth]);
+      // const yScale = d3
+      //   .scaleLinear()
+      //   .range([chartHeight, 0])
+      //   .domain([0, chartWidth]);
 
-      this.chart.append("g").call(d3.axisLeft(yScale).ticks(data.length));
+      // this.chart.append("g").call(d3.axisLeft(yScale).ticks(data.length));
 
-      const xScale = d3
-        .scaleBand()
-        .range([0, chartWidth])
-        .domain(data.map(d => d.word))
-        .padding(0.2);
+      // const xScale = d3
+      //   .scaleBand()
+      //   .range([0, chartWidth])
+      //   .domain(data.map(d => d.word))
+      //   .padding(0.2);
 
-      this.chart
-        .append("g")
-        .attr("transform", `translate(0, ${chartHeight})`)
-        .call(d3.axisBottom(xScale));
+      // this.chart
+      //   .append("g")
+      //   .attr("transform", `translate(0, ${chartHeight})`)
+      //   .call(d3.axisBottom(xScale));
+
+
     }
   }
 };
