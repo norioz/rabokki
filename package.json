@@ -1,19 +1,16 @@
 {
   "name": "rabokki",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "private": true,
-  "scripts": {},
-  "devDependencies": {},
-  "description": "A Korean word puzzle game.",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/norioz/rabokki.git"
+  "scripts": {
+    "start": "node ./bin/www"
   },
-  "author": "Crunch / Dig",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/norioz/rabokki/issues"
-  },
-  "homepage": "https://github.com/norioz/rabokki#readme"
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "pug": "^3.0.2"
+  }
 }
