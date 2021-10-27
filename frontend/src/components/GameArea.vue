@@ -1,13 +1,17 @@
 <template>
   <div class="GameArea">
-    <div>Thing One</div>
-    <div>Thing Two</div>
+    <div style="flex:1;">Thing One</div>
+    <PlayerInput />
   </div>
 </template>
 
 <script>
+import PlayerInput from "./PlayerInput";
 export default {
   name: 'GameArea',
+  components: {
+    PlayerInput
+  },
   props: {
   }
 }
@@ -17,6 +21,8 @@ export default {
 <style scoped>
 .GameArea {
   display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   flex: 1;
 }
 </style>
