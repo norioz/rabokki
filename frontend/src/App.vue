@@ -1,16 +1,22 @@
 <template>
   <div id="app">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Topbar />
+    <GameArea />
+    <PageFooter />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Topbar from './components/Topbar.vue'
+import PageFooter from './components/PageFooter.vue'
+import GameArea from './components/GameArea.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Topbar,
+    PageFooter,
+    GameArea
   }
 }
 </script>
@@ -22,6 +28,13 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 </style>
