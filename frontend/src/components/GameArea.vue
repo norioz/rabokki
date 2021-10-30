@@ -1,7 +1,7 @@
 <template>
   <div class="GameArea">
-    <div style="flex:1;">Thing One</div>
-    <PlayerInput />
+    <div style="flex:1;">{{PlayHistory}}</div>
+    <PlayerInput @theyEntered="this.onEnter" />
   </div>
 </template>
 
@@ -12,7 +12,15 @@ export default {
   components: {
     PlayerInput
   },
-  props: {
+  data: () => {
+    return {
+      PlayHistory: "foo"
+    }
+  },
+  methods: {
+    onEnter: function (theirEntry){
+      this.PlayHistory = this.PlayHistory.concat(' ', theirEntry);
+    }
   }
 }
 </script>

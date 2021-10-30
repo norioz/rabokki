@@ -8,8 +8,6 @@
 <script>
 export default {
   name: 'PlayerInput',
-  props: {
-  },
   data: () => {
     return {
       inputText: ""
@@ -17,8 +15,7 @@ export default {
   },
   methods: {
     shoutOut: function () {
-      // TODO This is where the logic goes after you submit
-      alert(this.inputText);
+      this.$emit('theyEntered', this.inputText)
     }
   }
 }
