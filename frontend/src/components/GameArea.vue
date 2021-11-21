@@ -16,9 +16,11 @@ export default {
   },
   data: () => {
     return {
-      PlayHistory: "foo",
+      playHistory: [""],
+      lastMove: [""],
       svg: null,
-      EnteredText: null,
+      enteredText: null,
+      lineCounter: 0,
     }
   },
   mounted() {
@@ -27,7 +29,8 @@ export default {
   
   methods: {
     onEnter(theirEntry){
-      this.PlayHistory = this.PlayHistory.concat(' ', theirEntry);
+      this.lastMove = theirEntry.split('-');
+      this.playHistory.push(this.lastMove);
       this.renderBoard();
     },
     renderBoard() {
@@ -48,13 +51,13 @@ export default {
           .attr("height", h);
       }     
     
-      this.svg.selectAll("text").remove()
+      this.lineCounter++;          
       
       this.svg.append("text")
         .attr("x", w / 2)
         .attr("y", h / 2)
-        .attr("dy", "3.5em")
-        .text(this.PlayHistory);
+        .attr("dy", (2 + 1.5*this.lineCounter).toString() + "em")
+        .text(this.lastMove.toString());
     }
   } 
 };
